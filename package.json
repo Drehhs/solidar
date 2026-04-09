@@ -1,0 +1,40 @@
+{
+  "name": "solidar",
+  "version": "1.0.0",
+  "description": "High-End Solidarity Platform - Community crowdfunding with modern web technologies",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000 --bind 127.0.0.1",
+    "build": "echo 'No build process required - static HTML/CSS/JS'",
+    "serve": "npx serve . -p 8000",
+    "vercel-build": "echo 'Static site - no build required'"
+  },
+  "keywords": [
+    "solidarity",
+    "crowdfunding",
+    "community",
+    "html",
+    "css",
+    "javascript",
+    "tailwindcss",
+    "mobile-money",
+    "rwanda"
+  ],
+  "author": "Solidar Team",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solidar/platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/solidar/platform/issues"
+  },
+  "homepage": "https://github.com/solidar/platform#readme"
+}

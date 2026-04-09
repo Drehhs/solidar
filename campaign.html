@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Solidar - Clean Water Initiative</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#c6c6c7",
+                        "inverse-primary": "#006d33",
+                        "on-surface": "#e5e2e1",
+                        "on-primary": "#003917",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-container": "#fecb00",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary": "#3d2f00",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#584400",
+                        "secondary-fixed": "#ffe08b",
+                        "secondary-fixed-dim": "#f1c100",
+                        "surface-tint": "#5adf82",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#5adf82",
+                        "inverse-on-surface": "#313030",
+                        "outline-variant": "#3d4a3e",
+                        "tertiary-container": "#909191",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#282a2a",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#005225",
+                        "outline": "#879486",
+                        "on-secondary-container": "#6e5700",
+                        "on-primary-container": "#003113",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-bright": "#393939",
+                        "primary": "#5adf82",
+                        "secondary": "#ffecc0",
+                        "primary-container": "#02a752",
+                        "on-primary-fixed": "#00210b",
+                        "surface-variant": "#353534",
+                        "surface-dim": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "background": "#131313",
+                        "on-tertiary": "#2f3131",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e5e2e1",
+                        "on-surface-variant": "#bccabb",
+                        "primary-fixed": "#78fc9c",
+                        "surface-container-highest": "#353534"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(19, 19, 19, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+    <!-- Top Navigation -->
+    <header class="flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50 glass-header">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-primary cursor-pointer" id="back-button">arrow_back</span>
+            <span class="font-headline tracking-tight font-bold text-lg text-primary">Solidar</span>
+        </div>
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+            <img alt="Profile" data-alt="portrait of a professional man in high-end studio lighting with a neutral blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBirz0alC9rspG3xHOA9MN_axTGNa49ad0R2Lw65V_2Ybr4uiApMHb1X3dChDWV2btthTLB5VTaMdA-AvvNitw19-vyJXeO6gYGZcMXl1K4lpnWBY_0fxurKpTgQTyIKtp7yx3QsS9XnsZLqWhm3XvWopUDhd5mpkc1tdBntscnNsRoilxqd7QA4CBRBsSW5rE_ke3uL6oOFLqYCXICTz01PYABqvd2nQZdGQLzg0f4IOmkJf-qMUz5Kr0dOXHOMnW0-Nw2EXKIWVk"/>
+        </div>
+    </header>
+
+    <main class="pb-32">
+        <!-- Hero Section -->
+        <section class="relative h-[530px] w-full overflow-hidden">
+            <img alt="Campaign Hero" class="w-full h-full object-cover" id="campaign-hero" data-alt="dramatic wide shot of a community in rural Rwanda gathering around a new water well with bright afternoon sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACUJBC5HPqLyGAzQZmArxsqfgtR9B7xMMk2MasmsQaYjNccWwlQliDvfNoLiobPLEGDlX3gJlixkOUsfDt_hywutY2szJTLVHa5JJ5kuuB9H1mduamjyVVmn1v08tTnfe6rrmvKJeMaBlGKVP8kHqkNu4uOQTu9UCH6txEObfc4nTMW9YYlb21W9wCHAbjk4iEQJmO8VOl6hYu5M4axHGiUA3aM7tbMNJUubmKo-FmPzqofuGS2VJomar0oWoUw1d9MhxQYRaMyLA"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full">
+                <span class="inline-block px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label text-[10px] font-bold uppercase tracking-widest mb-3" id="campaign-category">Community Project</span>
+                <h1 class="font-headline text-3xl font-extrabold tracking-tighter text-white mb-2 leading-tight" id="campaign-title">Clean Water for Nyarugenge District</h1>
+                <div class="flex items-center gap-2 text-on-surface-variant text-sm">
+                    <span class="material-symbols-outlined text-primary text-base">location_on</span>
+                    <span id="campaign-location">Kigali, Rwanda</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats & Progress -->
+        <section class="px-6 py-8">
+            <div class="flex justify-between items-end mb-4">
+                <div class="space-y-1">
+                    <span class="font-label text-xs text-on-surface-variant uppercase tracking-widest font-semibold">Raised of <span id="campaign-goal">$15,000</span></span>
+                    <p class="font-headline text-2xl font-bold text-primary" id="campaign-raised">$12,450</p>
+                </div>
+                <p class="font-headline text-lg font-bold text-on-surface" id="campaign-percentage">83%</p>
+            </div>
+            <!-- Solidarity Progress Tracker -->
+            <div class="h-2.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                <div class="h-full bg-primary rounded-full shadow-[0_0_15px_rgba(90,223,130,0.3)]" id="progress-bar" style="width: 83%"></div>
+            </div>
+            <div class="grid grid-cols-3 gap-4 mt-8">
+                <div class="bg-surface-container-low p-4 rounded-xl border border-white/5">
+                    <span class="block font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Backers</span>
+                    <span class="block font-headline font-bold text-lg" id="campaign-backers">248</span>
+                </div>
+                <div class="bg-surface-container-low p-4 rounded-xl border border-white/5">
+                    <span class="block font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Days Left</span>
+                    <span class="block font-headline font-bold text-lg" id="campaign-days">12</span>
+                </div>
+                <div class="bg-surface-container-low p-4 rounded-xl border border-white/5">
+                    <span class="block font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Impact</span>
+                    <span class="block font-headline font-bold text-lg" id="campaign-impact">1.2k+</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Timeline -->
+        <section class="px-6 py-8">
+            <h2 class="font-headline text-xl font-bold mb-8 tracking-tight">Trust Timeline</h2>
+            <div class="space-y-0 relative" id="trust-timeline">
+                <div class="absolute left-[11px] top-2 bottom-2 w-[2px] bg-surface-container-highest"></div>
+                <!-- Timeline items will be dynamically loaded -->
+            </div>
+        </section>
+
+        <!-- Video Testimonials -->
+        <section class="py-8">
+            <div class="px-6 mb-6 flex justify-between items-center">
+                <h2 class="font-headline text-xl font-bold tracking-tight">Community Voices</h2>
+                <span class="material-symbols-outlined text-on-surface-variant">more_horiz</span>
+            </div>
+            <div class="flex overflow-x-auto gap-4 px-6 no-scrollbar" id="testimonials">
+                <!-- Testimonials will be dynamically loaded -->
+            </div>
+        </section>
+
+        <!-- Campaign Story -->
+        <section class="px-6 py-8">
+            <h2 class="font-headline text-xl font-bold mb-4 tracking-tight">The Mission</h2>
+            <div class="space-y-4 text-on-surface-variant leading-relaxed" id="campaign-story">
+                <p id="story-paragraph-1">Nyarugenge district has faced significant water scarcity issues for over a decade. This initiative, led by local leaders, aims to build a sustainable solar-powered water filtration system.</p>
+                <p id="story-paragraph-2">Your contributions go directly towards high-grade equipment and training local youth to maintain the system, ensuring longevity and community ownership.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Actions -->
+    <div class="fixed bottom-0 left-0 w-full z-[60] p-6 bg-gradient-to-t from-surface via-surface to-transparent">
+        <button class="w-full bg-secondary-container hover:bg-secondary-fixed transition-colors text-on-secondary h-16 rounded-xl flex items-center justify-center gap-3 shadow-2xl shadow-black group active:scale-[0.98] duration-150" id="contribute-button">
+            <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">payments</span>
+            <span class="font-headline font-extrabold tracking-tight text-lg">Contribute with Mobile Money</span>
+            <div class="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full ring-4 ring-surface"></div>
+        </button>
+    </div>
+
+    <script src="js/campaign.js"></script>
+</body>
+</html>
