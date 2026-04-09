@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Solidar - Contribute Funds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#c6c6c7",
+                        "inverse-primary": "#006d33",
+                        "on-surface": "#e5e2e1",
+                        "on-primary": "#003917",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-container": "#fecb00",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary": "#3d2f00",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#584400",
+                        "secondary-fixed": "#ffe08b",
+                        "secondary-fixed-dim": "#f1c100",
+                        "surface-tint": "#5adf82",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#5adf82",
+                        "inverse-on-surface": "#313030",
+                        "outline-variant": "#3d4a3e",
+                        "tertiary-container": "#909191",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#282a2a",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#005225",
+                        "outline": "#879486",
+                        "on-secondary-container": "#6e5700",
+                        "on-primary-container": "#003113",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-bright": "#393939",
+                        "primary": "#5adf82",
+                        "secondary": "#ffecc0",
+                        "primary-container": "#02a752",
+                        "on-primary-fixed": "#00210b",
+                        "surface-variant": "#353534",
+                        "surface-dim": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "background": "#131313",
+                        "on-tertiary": "#2f3131",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e5e2e1",
+                        "on-surface-variant": "#bccabb",
+                        "primary-fixed": "#78fc9c",
+                        "surface-container-highest": "#353534"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-overlay {
+            background: rgba(32, 31, 31, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .inner-glow {
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+        }
+    </style>
+    <style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen">
+    <!-- Background Content (Simulated Dashboard) -->
+    <div class="fixed inset-0 z-0 p-8 overflow-hidden opacity-30 select-none pointer-events-none">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div class="h-64 bg-surface-container-low rounded-xl"></div>
+            <div class="grid grid-cols-3 gap-6">
+                <div class="h-40 bg-surface-container rounded-xl"></div>
+                <div class="h-40 bg-surface-container rounded-xl"></div>
+                <div class="h-40 bg-surface-container rounded-xl"></div>
+            </div>
+            <div class="h-96 bg-surface-container-low rounded-xl"></div>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-4 glass-overlay">
+        <!-- Modal Container -->
+        <div class="w-full max-w-md bg-surface-container-low rounded-xl overflow-hidden shadow-2xl border border-white/5 flex flex-col">
+            <!-- Modal Header -->
+            <div class="px-6 py-6 flex items-center justify-between">
+                <div>
+                    <h2 class="font-headline font-bold text-xl tracking-tight text-primary">Contribute Funds</h2>
+                    <p class="font-label text-xs uppercase tracking-widest text-tertiary mt-1">Solidar Network</p>
+                </div>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant" id="close-modal">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+
+            <!-- Solidarity Progress Tracker -->
+            <div class="px-6 mb-8">
+                <div class="flex justify-between items-end mb-2">
+                    <span class="font-label text-[10px] font-bold uppercase tracking-widest text-primary">Step <span id="current-step">1</span> of 2</span>
+                    <span class="font-label text-[10px] font-bold uppercase tracking-widest text-tertiary" id="step-description">Amount Selection</span>
+                </div>
+                <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full" id="progress-indicator" style="width: 50%"></div>
+                </div>
+            </div>
+
+            <!-- Content Area: Step 1 (Amount) -->
+            <div class="px-6 pb-8 space-y-8" id="step-1">
+                <!-- Amount Input Section -->
+                <div class="space-y-4">
+                    <label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant block">Enter Amount (RWF)</label>
+                    <div class="relative">
+                        <input class="w-full bg-surface-container-high border-none rounded-lg px-6 py-5 text-3xl font-headline font-extrabold tracking-tight focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-surface-variant" placeholder="0" type="number" id="amount-input"/>
+                        <div class="absolute right-6 top-1/2 -translate-y-1/2 font-headline font-bold text-tertiary">RWF</div>
+                    </div>
+                </div>
+
+                <!-- Suggested Amounts (Asymmetric Grid) -->
+                <div class="space-y-3">
+                    <span class="font-label text-[10px] font-bold uppercase tracking-widest text-tertiary">Quick Select</span>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button class="bg-surface-container rounded-lg py-4 px-4 text-left hover:bg-surface-container-high border border-transparent hover:border-primary/20 transition-all group amount-btn" data-amount="5000">
+                            <span class="block font-label text-[10px] text-tertiary mb-1 group-hover:text-primary transition-colors">Starter</span>
+                            <span class="block font-headline font-bold text-lg">5,000</span>
+                        </button>
+                        <button class="bg-surface-container rounded-lg py-4 px-4 text-left hover:bg-surface-container-high border border-transparent hover:border-primary/20 transition-all group amount-btn" data-amount="10000">
+                            <span class="block font-label text-[10px] text-tertiary mb-1 group-hover:text-primary transition-colors">Standard</span>
+                            <span class="block font-headline font-bold text-lg">10,000</span>
+                        </button>
+                        <button class="bg-surface-container rounded-lg py-4 px-4 text-left hover:bg-surface-container-high border border-transparent hover:border-primary/20 transition-all group amount-btn col-span-2" data-amount="25000">
+                            <span class="block font-label text-[10px] text-tertiary mb-1 group-hover:text-primary transition-colors">Generous</span>
+                            <span class="block font-headline font-bold text-lg">25,000</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="pt-4">
+                    <button class="w-full bg-secondary-container text-on-secondary font-headline font-bold py-5 rounded-lg inner-glow shadow-xl shadow-black/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2" id="next-step-btn">
+                        Next Step
+                        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+                    </button>
+                    <p class="text-center mt-6 text-[11px] text-on-surface-variant leading-relaxed px-4">
+                        By proceeding, you agree to the <span class="text-primary cursor-pointer hover:underline">Terms of Service</span> and acknowledge transaction fees may apply.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2: Payment Provider (Hidden by default) -->
+            <div class="px-6 pb-8 space-y-8 hidden" id="step-2">
+                <!-- Providers Section -->
+                <div class="space-y-4">
+                    <label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant block">Select Provider</label>
+                    <div class="space-y-3">
+                        <!-- MTN MoMo -->
+                        <button class="w-full flex items-center justify-between p-4 bg-surface-container rounded-xl border border-transparent hover:border-secondary-container transition-all provider-btn" data-provider="mtn">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary font-bold font-headline">MTN</div>
+                                <div class="text-left">
+                                    <span class="block font-headline font-bold">MTN MoMo</span>
+                                    <span class="block font-label text-[10px] text-tertiary">Instant Settlement</span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-secondary-container">radio_button_unchecked</span>
+                        </button>
+                        <!-- Airtel Money -->
+                        <button class="w-full flex items-center justify-between p-4 bg-surface-container rounded-xl border border-transparent hover:border-error transition-all provider-btn" data-provider="airtel">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-error rounded-lg flex items-center justify-center text-on-error font-bold font-headline">AIR</div>
+                                <div class="text-left">
+                                    <span class="block font-headline font-bold">Airtel Money</span>
+                                    <span class="block font-label text-[10px] text-tertiary">Direct Transfer</span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-surface-variant">radio_button_unchecked</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="pt-4 space-y-3">
+                    <button class="w-full bg-primary text-on-primary font-headline font-bold py-5 rounded-lg inner-glow shadow-xl shadow-black/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2" id="confirm-payment">
+                        <span class="material-symbols-outlined text-xl">lock</span>
+                        Confirm Payment
+                    </button>
+                    <button class="w-full bg-surface-container text-on-surface font-headline font-bold py-4 rounded-lg hover:bg-surface-container-high transition-all" id="back-to-amount">
+                        Back
+                    </button>
+                </div>
+            </div>
+
+            <!-- Summary Footnote -->
+            <div class="bg-surface-container px-6 py-4 flex items-center gap-3 border-t border-white/5">
+                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-sm" data-weight="fill">verified_user</span>
+                </div>
+                <span class="font-label text-[10px] text-tertiary leading-tight">Secured and verified by the Solidar Financial Governance Protocol.</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/contribute.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Solidar - High-End Solidarity</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary": "#c6c6c7",
+                "inverse-primary": "#006d33",
+                "on-surface": "#e5e2e1",
+                "on-primary": "#003917",
+                "on-background": "#e5e2e1",
+                "tertiary-fixed-dim": "#c6c6c7",
+                "secondary-container": "#fecb00",
+                "tertiary-fixed": "#e2e2e2",
+                "on-secondary": "#3d2f00",
+                "surface-container-low": "#1c1b1b",
+                "on-tertiary-fixed": "#1a1c1c",
+                "on-secondary-fixed-variant": "#584400",
+                "secondary-fixed": "#ffe08b",
+                "secondary-fixed-dim": "#f1c100",
+                "surface-tint": "#5adf82",
+                "on-tertiary-fixed-variant": "#454747",
+                "error-container": "#93000a",
+                "primary-fixed-dim": "#5adf82",
+                "inverse-on-surface": "#313030",
+                "outline-variant": "#3d4a3e",
+                "tertiary-container": "#909191",
+                "surface-container": "#201f1f",
+                "surface": "#131313",
+                "on-tertiary-container": "#282a2a",
+                "on-error-container": "#ffdad6",
+                "on-primary-fixed-variant": "#005225",
+                "outline": "#879486",
+                "on-secondary-container": "#6e5700",
+                "on-primary-container": "#003113",
+                "on-secondary-fixed": "#241a00",
+                "surface-bright": "#393939",
+                "primary": "#5adf82",
+                "secondary": "#ffecc0",
+                "primary-container": "#02a752",
+                "on-primary-fixed": "#00210b",
+                "surface-variant": "#353534",
+                "surface-dim": "#131313",
+                "surface-container-high": "#2a2a2a",
+                "on-error": "#690005",
+                "background": "#131313",
+                "on-tertiary": "#2f3131",
+                "surface-container-lowest": "#0e0e0e",
+                "error": "#ffb4ab",
+                "inverse-surface": "#e5e2e1",
+                "on-surface-variant": "#bccabb",
+                "primary-fixed": "#78fc9c",
+                "surface-container-highest": "#353534"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131313;
+        }
+        .headline-font {
+            font-family: 'Manrope', sans-serif;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+      </style>
+</head>
+<body class="dark bg-surface text-on-surface min-h-screen pb-24">
+    <!-- TopAppBar -->
+    <header class="flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50 bg-[#131313] dark:bg-neutral-950">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+            <h1 class="text-xl font-extrabold tracking-tighter text-[#5ADF82] dark:text-emerald-400 headline-font">Solidar</h1>
+        </div>
+        <div class="h-8 w-8 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant/30 overflow-hidden">
+            <img alt="user profile picture" data-alt="close up portrait of a professional smiling man with glasses in a modern studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLrccY_hNndxzZKcJsO7BvGjXQEeCzDAJ2-oAIujeENwAJSTREZMU2dOthV6v78G3dIUhdHHLxoMQGq8qxJhEMaqmeDAFVGHDJZH0W-wHMNidni-zYUym6XIoOn_aQrUnQ-_cTaPRITDk5zW1fP6TpsmSJeLsWmErSd8lUd1emR1I8QgQtsjHHq7fiCF3VYg04RePrdF9q-VDZZSjtI3Rs95P7nRcGonh_WwCLOPZioLj5L1UibtTYOq0YIjPF75S8zT-c-zjxw84"/>
+        </div>
+    </header>
+
+    <main class="pt-20 px-6 max-w-2xl mx-auto">
+        <!-- Hero Context -->
+        <section class="mb-8">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-1 headline-font">Active Ecosystem</p>
+            <h2 class="text-3xl font-extrabold tracking-tight headline-font text-on-surface">Community Fund</h2>
+        </section>
+
+        <!-- Dynamic Campaign Grid -->
+        <div class="space-y-10" id="campaign-grid">
+            <!-- Campaign cards will be dynamically loaded here -->
+        </div>
+    </main>
+
+    <!-- BottomNavBar -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/60 backdrop-blur-xl border-t border-white/5 shadow-2xl shadow-black rounded-t-xl">
+        <!-- Home Active -->
+        <a class="flex flex-col items-center justify-center text-[#5ADF82] bg-emerald-500/10 rounded-xl px-4 py-1 active:scale-90 transition-all" href="#" data-page="home">
+            <span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest font-manrope">Home</span>
+        </a>
+        <!-- Explore -->
+        <a class="flex flex-col items-center justify-center text-neutral-500 hover:text-emerald-300 active:scale-90 transition-all" href="#" data-page="explore">
+            <span class="material-symbols-outlined" data-icon="search">search</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest font-manrope">Explore</span>
+        </a>
+        <!-- Contributions -->
+        <a class="flex flex-col items-center justify-center text-neutral-500 hover:text-emerald-300 active:scale-90 transition-all" href="#" data-page="contributions">
+            <span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest font-manrope">Contributions</span>
+        </a>
+    </nav>
+
+    <!-- Floating Action Button - Contextual to Home -->
+    <button class="fixed bottom-24 right-6 h-14 w-14 bg-secondary-container text-on-secondary rounded-full shadow-2xl flex items-center justify-center active:scale-90 transition-transform z-40 border border-white/10" id="fab-button">
+        <span class="material-symbols-outlined" data-icon="add" data-weight="fill" style="font-variation-settings: 'FILL' 1;">add</span>
+    </button>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
